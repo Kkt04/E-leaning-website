@@ -2,6 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 
 import mongoose from 'mongoose';
+import courseRoute from  './routes/course.route';
+
 const app = express();
 
 dotenv.config();
@@ -15,7 +17,8 @@ try {
 } catch (error) {
     console.log("Error: ", error);
 }
-
+//defining routes
+app.use("/course",  courseRoute);
 
 
 app.listen(PORT, () => { 
